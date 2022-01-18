@@ -93,7 +93,7 @@ class imgshow(App):
         obj.source='./pics/xx2.png'
         self.popup_file_window()
     def callbackdown(self,obj):
-        print('callbackdownfunction imgshow')
+        print('callbackdownfunc')
         obj.source='./pics/xx1.png'
 
 if __name__=='__main__':
