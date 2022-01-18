@@ -24,6 +24,21 @@ class MyImage(Image):
     def on_touch_up(self,touch):
         if self.collide_point(*touch.pos):
             self.on_touch_up_func()
+
+class fileImage(Image):
+    def on_touch_down_func():
+        pass
+    def on_touch_down(self,touch):
+        if self.collide_point(*touch.pos):
+            self.on_touch_down_func()
+
+def test():
+    for root,dirs,files in os.walk('.'):
+        return(root,dirs,files)
+
+class filesLayout(BoxLayout):
+    pass
+
 class imgshow(App):
     imglist=[]
     pos=0
@@ -97,4 +112,5 @@ class imgshow(App):
         obj.source='./pics/xx1.png'
 
 if __name__=='__main__':
-    imgshow().run()
+    #imgshow().run()
+    print(test())
