@@ -29,7 +29,7 @@ class imgshow(App):
     pos=0
     mainlayout=FloatLayout()
     def build(self):
-        self.imglist=glob.glob('*.jpg')+glob.glob('*.ico')
+        self.imglist=glob.glob('./pics/*.jpg')+glob.glob('./pics/*.ico')
         self.add_interface()
         self.add_option()
         return self.mainlayout
@@ -84,7 +84,7 @@ class imgshow(App):
         self.filechoose=FileChooserIconView()
         self.filechoose.path='C:\\Users\\tomst\\Desktop\\Icons'
         filechoose=BoxLayout(orientation='horizontal')
-        img=Image(source='test.jpg')
+        img=Image(source='./pics/test.jpg')
         filechoose.add_widget(self.filechoose)
         popupwindow=Popup(title='file choose here',content=filechoose,size_hint=(None,None),size=(500,500))
         popupwindow.open()
