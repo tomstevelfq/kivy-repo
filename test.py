@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.image import Image
+from kivy.uix.floatlayout import FloatLayout
 import copy
 
 class fileLayout(BoxLayout):
@@ -36,4 +37,15 @@ def testa(b,**kwargs):
     print(b,kwargs)
 #testApp().run()
 
-testa(a=23,b=89,c=888)
+#testa(a=23,b=89,c=888)
+
+class testApp1(App):
+    def build(self):
+        b=BoxLayout(orientation='vertical')
+        b.add_widget(Image(source='./pics/test.jpg',size_hint=(1,0.5)))
+        b.add_widget(Image(source='./pics/test.jpg',size_hint=(1,0.3)))
+        f=FloatLayout()
+        f.add_widget(Image(source='./pics/test.jpg',size_hint=(1,0.5),pos_hint={'top':1}))
+        f.add_widget(Image(source='./pics/test.jpg',size_hint=(1,0.3),pos_hint={'y':0.2}))
+        return f
+testApp1().run()
