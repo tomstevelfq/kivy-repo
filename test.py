@@ -32,4 +32,8 @@ class testApp(App):
         
         return mfile
 
-testApp().run()
+def testa(b,**kwargs):
+    print(b,kwargs)
+#testApp().run()
+
+testa(a=23,b=89,c=888)
