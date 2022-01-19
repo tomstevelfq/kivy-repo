@@ -23,7 +23,7 @@ class scrollFileView(ScrollView):
         for i in range(50):
             self.st.add_widget(dirIcon(size_hint=(0.125,None)))
         self.st.bind(minimum_height=self.st.setter('height'))
-        self.size_hint=(1,1)
+        self.size_hint=(1,1)fasfds
         self.add_widget(self.st)
 
 FileApp().run()
