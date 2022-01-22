@@ -13,7 +13,7 @@ class fileNaviBar(FloatLayout):
     gap1=70
     gap2=40
     zoom_attr=1
-    def __init__(self,zoom_attr=1,**kwargs):
+    def __init__(self,fun=None,zoom_attr=1,**kwargs):
         super(fileNaviBar,self).__init__(**kwargs)
         self.apply_zoom(zoom_attr)
         self.img=MyImage(source='./pics/option.png',size_hint=(None,None),size=(self.length,self.length))
@@ -26,8 +26,12 @@ class fileNaviBar(FloatLayout):
             self.line=Line(width=1,rectangle=(self.lab.x,self.lab.y,0,0))
         self.serimg=MyImage(source='./pics/search.png',size_hint=(None,None),size=(self.length,self.length))
         self.opt1img=MyImage(source='./pics/option1.png',size_hint=(None,None),size=(self.length,self.length))
+        self.lastimg=MyImage(source='./pics/last.png',size_hint=(None,None),size=(self.length,self.length))
+        if fun!=None:
+            self.lastimg.on_touch_up_func=fun
         self.add_widget(self.serimg)
         self.add_widget(self.opt1img)
+        self.add_widget(self.lastimg)
         self.bind(size=self.update,pos=self.update)
         self.lab.bind(size=self.update,pos=self.update)
     
@@ -43,6 +47,7 @@ class fileNaviBar(FloatLayout):
         self.opt1img.pos=(self.width-self.gap2,self.y)
         self.lab.pos=(self.gap2,self.y)
         self.img.pos=(self.x,self.y)
+        self.lastimg.pos=(self.width-self.gap1*1.8,self.y)
         self.lab.width=self.width-(130*self.zoom_attr)
         self.lab.text_size=self.lab.size
         self.line.rectangle=(self.lab.x,self.lab.y,self.lab.width,self.lab.height)

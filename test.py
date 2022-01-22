@@ -48,4 +48,21 @@ class testApp1(App):
         f.add_widget(Image(source='./pics/test.jpg',size_hint=(1,0.5),pos_hint={'top':1}))
         f.add_widget(Image(source='./pics/test.jpg',size_hint=(1,0.3),pos_hint={'y':0.2}))
         return f
-testApp1().run()
+#testApp1().run()
+
+class b():
+    def bb():
+        print('bb')
+
+class a():
+    val=12
+    def __init__(self):
+        self.bb=b(bb=self.update)
+    def update(self):
+        print('update',self.val)
+
+import os
+print('hello',os.path.isfile('C:/Users/tomst/「开始」菜单'))
+for root,dir,file in os.walk('C:/Users/tomst/「开始」菜单'):
+    print(root,dir,file)
+
