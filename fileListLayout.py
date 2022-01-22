@@ -26,4 +26,5 @@ class scrollFileView(ScrollView):
         self.size_hint=(1,1)
         self.add_widget(self.st)
 
-FileApp(title=root).run()
+if __name__=='__main__':
+    FileApp(title=root).run()
