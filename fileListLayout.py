@@ -62,9 +62,12 @@ class scrollFileView(ScrollView):
             self.st.add_widget(dirIcon(fun=self.update_dir,fname=i,size_hint=(0.1,None)))
         for i in files:
             self.st.add_widget(fileIcon(fun=self.update_file,fname=i,size_hint=(0.1,None)))
+        self.updatePath(path=self.path)
     def predir(self):
         self.path=os.path.dirname(self.path)
         self.update()
+    def updatePath(self,path=''):
+        pass
 
 if __name__=='__main__':
     FileApp().run()

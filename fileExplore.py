@@ -17,7 +17,10 @@ class mainInterface(StackLayout):
         for root,dirs,files in os.walk(os.getcwd()):
             break
         self.flist=scrollFileView(path=os.getcwd())
-        self.add_widget(fileNaviBar(fun=self.flist.predir,size_hint=(1,None),height=40))
+        fnavi=fileNaviBar(fun=self.flist.predir,size_hint=(1,None),height=40)
+        self.flist.updatePath=fnavi.showpath
+        self.flist.update()
+        self.add_widget(fnavi)
         self.add_widget(self.flist)
     def update(self,*args):
         self.rt.pos=self.pos
