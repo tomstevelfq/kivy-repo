@@ -21,7 +21,6 @@ class mainInterface(StackLayout):
         self.flist.updatePath=fnavi.showpath
         self.flist.update()
         self.add_widget(fnavi)
-        dafsafsafdfsaf
         self.add_widget(self.flist)
     def update(self,*args):
         self.rt.pos=self.pos
